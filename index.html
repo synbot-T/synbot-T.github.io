@@ -9,6 +9,9 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
@@ -39,14 +42,6 @@
             color: #38bdf8;
         }
 
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* CONTAINER */
         .section {
             max-width: 900px;
             margin: auto;
@@ -58,6 +53,30 @@
             border-left: 6px solid #38bdf8;
             padding-left: 12px;
             font-size: 26px;
+        }
+
+        /* SKILLS */
+        .skill {
+            margin-bottom: 16px;
+        }
+
+        .skill-name {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background: #334155;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: #38bdf8;
+            width: 0;
+            transition: 1.5s ease;
         }
 
         /* PROJECT CARD */
@@ -94,65 +113,74 @@
 <body>
 
     <!-- HERO SECTION -->
-    <div class="hero">
+    <div class="hero" data-aos="fade-down">
         <img src="https://via.placeholder.com/160" alt="avatar">
         <h1>Le Thang</h1>
-        <p>Robotics & Automation Engineer • 7+ Years Experience  
-            <br>Real-time Control • SCARA • ROS • C/C++ • Python • EtherCAT • CAN
+        <p>Robotics & Automation Engineer • SCARA • Real-time Control  
+            <br>ROS • C/C++ • Python • EtherCAT • CAN
         </p>
     </div>
 
     <!-- ABOUT SECTION -->
-    <div class="section">
+    <div class="section" data-aos="fade-up">
         <h2>About Me</h2>
         <p>
-            I am an industrial robotics engineer with over 7 years of experience in real-time robot controllers,
-            automation systems, industrial communication (CAN, RS485, Modbus, EtherCAT), and ROS-based kinematics.
-            Passionate about designing robots and improving automation workflow.
+            Robotics engineer with 7+ years in industrial automation, real-time controllers, robot kinematics, motion control, and industrial communication (CAN, RS485, Modbus, EtherCAT).
         </p>
     </div>
 
-    <!-- PROJECTS SECTION -->
-    <div class="section">
+    <!-- SKILLS SECTION -->
+    <div class="section" data-aos="fade-up">
+        <h2>Skills</h2>
+
+        <div class="skill">
+            <div class="skill-name">C / C++</div>
+            <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">ROS / Kinematics</div>
+            <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">EtherCAT / CAN / Modbus</div>
+            <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Real-time Control / RTOS</div>
+            <div class="skill-bar"><div class="skill-level" data-level="75%"></div></div>
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section" data-aos="fade-up">
         <h2>Projects</h2>
 
-        <!-- PROJECT 1 -->
-        <div class="project">
+        <div class="project" data-aos="fade-up">
             <h3>SCARA Robot – PVT Control over CAN</h3>
-            <p>
-                Implemented smooth real-time motion using PVT interpolation over CAN bus.
-                Designed control loops, kinematics, and GUI visual tools.
-            </p>
-
-            <img src="https://via.placeholder.com/900x450?text=SCARA+Robot" alt="SCARA Robot">
-
-            <video controls>
-                <source src="scara_demo.mp4" type="video/mp4">
-            </video>
+            <p>Designed smooth & precise robot motion using PVT interpolation.</p>
+            <img src="https://via.placeholder.com/900x450?text=SCARA+Robot">
+            <video controls><source src="scara_demo.mp4"></video>
         </div>
 
-        <!-- PROJECT 2 -->
-        <div class="project">
+        <div class="project" data-aos="fade-up">
             <h3>Real-time Robot Controller (RTOS + EtherCAT)</h3>
-            <p>
-                Built a custom robot controller supporting kinematics, interpolation, and EtherCAT servo drives.
-            </p>
-
-            <img src="https://via.placeholder.com/900x450?text=Robot+Controller" alt="Robot Controller">
-
-            <video controls>
-                <source src="controller_demo.mp4" type="video/mp4">
-            </video>
+            <p>Custom robot controller with kinematics, interpolation & EtherCAT servo control.</p>
+            <img src="https://via.placeholder.com/900x450?text=Robot+Controller">
+            <video controls><source src="controller_demo.mp4"></video>
         </div>
 
-        <!-- PROJECT 3 -->
-        <div class="project">
-            <h3>ROS-based Industrial Robot Kinematics</h3>
-            <p>
-                Developed forward/inverse kinematics modules with RViz visualization and motion planning.
-            </p>
-
-            <img src="https://via.placeholder.com/900x450?text=ROS+Visualization" alt="ROS Visualization">
+        <div class="project" data-aos="fade-up">
+            <h3>ROS-based Robot Kinematics</h3>
+            <p>Forward/Inverse kinematics with RViz visualization.</p>
+            <img src="https://via.placeholder.com/900x450?text=ROS+Visualization">
         </div>
 
     </div>
@@ -161,6 +189,21 @@
         Contact: your_email@example.com — GitHub: github.com/yourusername
     </footer>
 
-</body>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init();
+
+        // Skill bar animation
+        const skills = document.querySelectorAll('.skill-level');
+        skills.forEach(skill => {
+            let level = skill.getAttribute('data-level');
+            setTimeout(() => {
+                skill.style.width = level;
+            }, 500);
+        });
+    </script>
+
+</body>
 </html>
